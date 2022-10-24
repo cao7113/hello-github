@@ -2,3 +2,10 @@
 version: "3"
 tasks:
   web: open https://docs.github.com/en/actions
+
+  # act --container-architecture linux/amd64
+
+  install-act:
+    desc: install act as https://github.com/nektos/act
+    cmds:
+      - brew install act
