@@ -1,0 +1,11 @@
+# https://taskfile.dev
+version: "3"
+tasks:
+  actions-docs: open https://docs.github.com/en/actions
+
+  # act --container-architecture linux/amd64
+
+  install-act:
+    desc: install act https://github.com/nektos/act
+    cmds:
+      - brew install act
