@@ -1,0 +1,22 @@
+# https://docs.github.com/en/actions/using-workflows/reusing-workflows
+name: Called workflow1
+on:
+  workflow_call:
+    inputs:
+      some_input:
+        description: "An example input"
+        required: true
+        type: string
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  called-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print input message
+        run: echo "hello ${{ inputs.some_input }}"

@@ -3,6 +3,9 @@ version: "3"
 tasks:
   actions-docs: open https://docs.github.com/en/actions
 
+  # git_ops
+  cmt: mix git_ops.release
+
   # act --container-architecture linux/amd64
 
   install-act:

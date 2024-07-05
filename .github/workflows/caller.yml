@@ -1,0 +1,20 @@
+name: Caller workflow1
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  inspect-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect env
+        run: |
+          printenv | sort
+          lsb_release -a
+  caller-job1:
+    needs: inspect-env
+    uses: ./.github/workflows/called.yml
+    with:
+      some_input: "Hello from main workflow"
