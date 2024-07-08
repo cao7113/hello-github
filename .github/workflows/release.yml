@@ -17,9 +17,9 @@ jobs:
       - name: Test
         run: cat Release.txt
 
-      # # https://github.com/softprops/action-gh-release
-      # - name: Release
-      #   uses: gaoDean/action-gh-release@v2
-      #   if: startsWith(github.ref, 'refs/tags/')
-      #   with:
-      #     files: Release.txt
+      # https://github.com/softprops/action-gh-release
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: Release.txt
