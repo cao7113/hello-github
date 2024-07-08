@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.1.1](https://github.com/cao7113/hello-github/compare/v0.1.0...v0.1.1) (2024-07-08)
+
+
+
+
+### Bug Fixes:
+
+* release
+
 ## [v0.1.0](https://github.com/cao7113/hello-github/compare/v0.1.0...v0.1.0) (2024-07-08)
 
 
