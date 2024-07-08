@@ -4,6 +4,10 @@ on:
     tags:
       - "v*.*.*"
 
+permissions:
+  # required for publish release!
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest

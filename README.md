@@ -1,6 +1,7 @@
 # Hello Github
 
-![CI](https://github.com/cao7113/hello-github/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/cao7113/hello-github/actions/workflows/ci.yml/badge.svg)](https://github.com/cao7113/hello-github/actions/workflows/ci.yml)
+[![Release](https://github.com/cao7113/hello-github/actions/workflows/release.yml/badge.svg)](https://github.com/cao7113/hello-github/actions/workflows/release.yml)
 
 Learn Github playground.
 
