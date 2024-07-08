@@ -1,5 +1,7 @@
 # Hello Github
 
+![CI](https://github.com/cao7113/hello-github/actions/workflows/ci.yml/badge.svg)
+
 Learn Github playground.
 
 ## [Github Actions](https://github.com/actions/)
