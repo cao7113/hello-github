@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.1.7](https://github.com/cao7113/hello-github/compare/v0.1.6...v0.1.7) (2024-07-09)
+
+
+
+
+### Bug Fixes:
+
+* ci workflow_call bug
+
 ## [v0.1.6](https://github.com/cao7113/hello-github/compare/v0.1.5...v0.1.6) (2024-07-09)
 
 
