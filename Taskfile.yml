@@ -4,7 +4,7 @@ tasks:
   actions-docs: open https://docs.github.com/en/actions
 
   # git_ops
-  cmt: mix git_ops.release && git push --follow-tags
+  cmt: mix git_ops.release --yes && git push --follow-tags
 
   # act --container-architecture linux/amd64
 
