@@ -1,0 +1,26 @@
+name: Inspect Env
+on:
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+
+jobs:
+  inspect-env:
+    runs-on: ubuntu-latest
+    steps:
+      # - name: Checkout repo
+      #   uses: actions/checkout@v4
+
+      - name: Inspect env
+        run: |
+          printenv | sort
+        env:
+          TEST_ENV1: "test env1"
+          # cmd not evaluated here!!!
+          TEST_ENV2: "$(git log -1 --format='%ct')"
+
+      # - name: Test path
+      #   run: |
+      #     pwd
+      #     ls -al

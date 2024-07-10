@@ -20,6 +20,10 @@ ACTIONS_RUNNER_DEBUG=true
 ACTIONS_STEP_DEBUG=true
 ```
 
+## See Also
+
+- [hello-api-elixir](https://github.com/cao7113/hello-api-elixir)
+
 ## Note about mix.exs and elixir releated files.
 
 Mainly use `git_ops.*` tasks, not important in this project.

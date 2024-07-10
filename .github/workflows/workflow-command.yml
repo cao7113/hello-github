@@ -1,0 +1,76 @@
+# https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions
+name: Try Workflow Commands
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  try-commands:
+    runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Group of log lines
+        run: |
+          echo "::group::My title"
+          echo "Inside group"
+          echo "::endgroup::"
+
+      - name: mask env value
+        run: echo "env MY_NAME is ::add-mask::$MY_NAME"
+
+      - id: sets-a-secret
+        name: Generate, mask, and output a secret
+        run: |
+          the_secret=$((RANDOM))
+          echo "::add-mask::$the_secret"
+          echo "secret-number=$the_secret" >> "$GITHUB_OUTPUT"
+
+      - name: Use that secret output (protected by a mask)
+        run: |
+          echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
+
+      - name: Disable workflow commands
+        run: |
+          echo '::warning:: This is a warning message, to demonstrate that commands are being processed.'
+          stopMarker=$(uuidgen)
+          echo "::stop-commands::$stopMarker"
+          echo '::warning:: This will NOT be rendered as a warning, because stop-commands has been invoked.'
+          echo "::$stopMarker::"
+          echo '::warning:: This is a warning again, because stop-commands has been turned off.'
+
+      - name: Set environment variable
+        run: |
+          echo "TEST_VAR=hello_world" >> $GITHUB_ENV
+          echo TEST_ENV1=$(git log -1 --format="%ct") >> $GITHUB_ENV
+
+      - name: Use environment variable
+        run: |
+          echo TEST_VAR=$TEST_VAR
+          echo TEST_VAR=${{ env.TEST_VAR }} in env context
+          echo TEST_ENV1=$TEST_ENV1
+          echo TEST_ENV1=${{ env.TEST_ENV1 }} in env context
+
+      - name: Set the value in bash
+        id: step_one
+        run: |
+          {
+            echo 'JSON_RESPONSE<<EOF'
+            curl https://example.com
+            echo EOF
+          } >> "$GITHUB_ENV"      - name: Set color
+        id: color-selector
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: Get color
+        env:
+          SELECTED_COLOR: ${{ steps.color-selector.outputs.SELECTED_COLOR }}
+        run: echo "The selected color is $SELECTED_COLOR"
+
+        
+      - name: Inspect env
+        run: printenv | sort
