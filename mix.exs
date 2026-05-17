@@ -23,7 +23,7 @@ defmodule HelloGithub.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:git_ops, "~> 2.6.1", only: [:dev]}
+      {:git_ops, "~> 2.6.1", only: [:dev], runtime: false}
     ]
   end
 end

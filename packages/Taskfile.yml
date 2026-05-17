@@ -1,0 +1,14 @@
+# https://taskfile.dev
+version: "3"
+tasks:
+  login: |
+    # in bash
+    # read -sp "Please enter your PAT(Personal Access Token): " CR_PAT
+    # echo
+    echo -n "Please enter your PAT(Personal Access Token): "
+    read CR_PAT
+    echo
+    echo $CR_PAT | docker login ghcr.io -u cao7113 --password-stdin
+
+  build-test: docker build -t ghcr.io/cao7113/hello-github/busybox-test:latest .
+  push-test: docker push ghcr.io/cao7113/hello-github/busybox-test:latest

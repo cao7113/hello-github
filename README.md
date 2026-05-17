@@ -11,7 +11,7 @@ Learn Github playground.
 - https://github.com/softprops/action-gh-release
 - [Run your GitHub Actions locally 🚀](https://github.com/nektos/act)
 
-## Enable debug logging
+### Enable debug logging
 
 https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/enabling-debug-logging
 
@@ -23,6 +23,7 @@ ACTIONS_STEP_DEBUG=true
 ## See Also
 
 - [hello-api-elixir](https://github.com/cao7113/hello-api-elixir)
+- [hello-phx](https://github.com/cao7113/hello-phx)
 
 ## Note about mix.exs and elixir releated files.
 
